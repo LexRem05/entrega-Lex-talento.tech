@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es"> 
+  <!-- Define el tipo de documento HTML y especifica el idioma como español -->
+
+<head>
+  <!-- La sección <head> contiene los metadatos del documento -->
+  
+  <meta charset="UTF-8"> 
+  <!-- Especifica la codificación de caracteres, en este caso UTF-8 (permite caracteres como ñ y acentos) -->
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!-- Ajusta el documento para que sea responsivo en todos los dispositivos, especialmente móviles -->
+  
+  <title>Hotel Las Disidencias</title> 
+  <!-- Define el título de la página que se verá en la pestaña del navegador -->
+
+  <style>
+    /* Comienza la sección de estilos en CSS */
+    
+    * {
+      /* Aplica estos estilos a todos los elementos de la página */
+      margin: 0; /* Elimina los márgenes predeterminados */
+      padding: 0; /* Elimina el relleno interno predeterminado */
+      box-sizing: border-box; /* Hace que todas las medidas incluyan bordes y rellenos */
+      font-family: Arial, sans-serif; /* Aplica la fuente Arial u otra sans-serif por defecto */
+    }
+
+    body {
+      /* Estilos para el cuerpo de la página */
+      background-color: #f4f4f9; /* Color de fondo claro */
+      color: #333; /* Color del texto principal en tonos oscuros */
+    }
+
+    header h1 {
+      /* Estilos para el título principal dentro del encabezado */
+      font-size: 2.5em; /* Tamaño grande para el texto */
+      background: linear-gradient(purple); /* Aplica un gradiente púrpura como fondo */
+      color: white; /* Cambia el color del texto a blanco */
+      text-align: center; /* Centra el texto horizontalmente */
+      padding: 10px; /* Añade espacio interno alrededor del texto */
+    }
+    
+    header p {
+      /* Estilos para el texto descriptivo dentro del encabezado */
+      background: linear-gradient(purple); /* Fondo púrpura con gradiente */
+      color: white; /* Cambia el color del texto a blanco */
+      text-align: center; /* Centra el texto horizontalmente */
+      padding: 5px; /* Añade un poco de espacio interno */
+    }
+    
+    header h2 {
+      /* Estilos para el subtítulo dentro del encabezado */
+      font-size: 14px; /* Tamaño del texto más pequeño */
+      background: purple; /* Fondo morado sólido */
+	  Color: white; /* Cambia el color del texto a blanco */
+      padding: 10px; /* Añade espacio interno alrededor del texto */
+      text-align: left; /* Alinea el texto a la izquierda */
+    }
+
+    nav {
+      /* Estilos para la barra de navegación */
+      background: green; /* Fondo verde */
+      padding: 10px; /* Espacio interno alrededor de los enlaces */
+      text-align: center; /* Centra los elementos dentro de la barra */
+    }
+
+    nav a {
+      /* Estilos para los enlaces dentro de la barra de navegación */
+      color: white; /* Cambia el color del texto a blanco */
+      margin: 0 15px; /* Añade espacio horizontal entre los enlaces */
+      text-decoration: none; /* Elimina el subrayado predeterminado */
+      font-weight: bold; /* Texto en negrita */
+    }
+
+    nav a:hover {
+      /* Efecto cuando se pasa el ratón por encima de los enlaces */
+      text-decoration: underline; /* Agrega el subrayado al enlace */
+    }
+
+    section {
+      /* Estilos para las secciones principales */
+      padding: 40px 20px; /* Espacio interno superior/inferior y lateral */
+      max-width: 1200px; /* Limita el ancho máximo de las secciones */
+      margin: auto; /* Centra la sección horizontalmente */
+    }
+
+    .servicios {
+      /* Estilos para el contenedor de servicios */
+      display: flex; /* Usa Flexbox para organizar los servicios */
+      flex-wrap: wrap; /* Permite que los elementos se ajusten en varias filas si es necesario */
+      justify-content: center; /* Centra los servicios horizontalmente */
+      gap: 20px; /* Espacio entre los servicios */
+    }
+
+    .servicio {
+      /* Estilos para cada servicio individual */
+      background: white; /* Fondo blanco */
+      padding: 20px; /* Espacio interno alrededor del contenido */
+      border-radius: 10px; /* Bordes redondeados */
+      width: 250px; /* Ancho fijo para cada servicio */
+      text-align: center; /* Centra el texto horizontalmente */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Añade sombra ligera al cuadro */
+    }
+
+    .habitaciones {
+      /* Estilos para el contenedor de habitaciones */
+      display: grid; /* Usa Grid Layout para organizar las habitaciones */
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Crea un diseño responsivo */
+      gap: 20px; /* Espacio entre las habitaciones */
+    }
+
+    .habitacion {
+      /* Estilos para cada habitación individual */
+      background: white; /* Fondo blanco */
+      border-radius: 10px; /* Bordes redondeados */
+      overflow: hidden; /* Oculta el contenido que se salga del cuadro */
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera alrededor del cuadro */
+      transition: transform 0.3s; /* Agrega una animación de transformación */
+    }
+
+    .habitacion:hover {
+      /* Efecto cuando se pasa el ratón por encima de la habitación */
+      transform: scale(1.03); /* Aumenta el tamaño ligeramente */
+    }
+
+    .habitacion img {
+      /* Estilos para las imágenes dentro de las habitaciones */
+      width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+      height: 180px; /* Altura fija para las imágenes */
+      object-fit: cover; /* Ajusta la imagen para que se vea completa sin deformarse */
+    }
+
+    .habitacion-info {
+      /* Estilos para el contenido textual dentro de las habitaciones */
+      padding: 15px; /* Espacio interno alrededor del texto */
+    }
+
+    .habitacion-info h3 {
+      /* Estilos para el título de cada habitación */
+      color: #0066cc; /* Cambia el color del texto a azul */
+      margin-bottom: 10px; /* Añade espacio debajo del título */
+    }
+
+    .precio {
+      /* Estilos para el precio de cada habitación */
+      font-size: 1.2em; /* Tamaño ligeramente más grande */
+      font-weight: bold; /* Texto en negrita */
+      color: #e67e22; /* Cambia el color a naranja */
+      margin-top: 10px; /* Espacio encima del texto */
+    }
+
+    footer {
+      /* Estilos para el pie de página */
+      background: #004c99; /* Fondo azul oscuro */
+      color: white; /* Texto en blanco */
+      text-align: center; /* Centra el texto horizontalmente */
+      padding: 15px; /* Espacio interno alrededor del contenido */
+      margin-top: 40px; /* Espacio superior para separar del resto del contenido */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Comienza el cuerpo de la página -->
+
+  <!-- Encabezado principal -->
+  <header>
+    <h2>Diverqueer ⚧️🏳️‍🌈🏳️‍⚧️ SAS</h2>
+    <h1>Hotel Las Disidencias</h1>
+    <p>Un lugar para hospedarte y organizar luchas por les subalternes</p>
+  </header>
+
+  <!-- Barra de navegación principal -->
+  <nav>
+    <!-- Links dentro de la barra de navegación -->
+    <a href="#servicios">Servicios</a>
+    <a href="#habitaciones">Habitaciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Sección de Servicios del hotel -->
+  <main>
+    <section id="servicios" aria-labelledby="titulo-servicios">
+      <!-- Contenido sobre los servicios -->
+      <h2 id="titulo-servicios">Servicios del Hotel</h2>
+      <div class="servicios">
+        <article class="servicio">
+          <h3>Restaurante Gourmet vegano</h3>
+          <p>Deliciosos platillos locales e internacionales.</p>
+        </article>
+        <article class="servicio">
+          <h3>Spa & Salón de preparativos</h3>
+          <p>Masajes, sauna, jacuzzi y un sitio para reuniones.</p>
+        </article>
+        <article class="servicio">
+          <h3>Piscina</h3>
+          <p>Piscina climatizada con vista al mar.</p>
+        </article>
+        <article class="servicio">
+          <h3>Wi-Fi Gratis</h3>
+          <p>Conéctate en todo el hotel sin costo adicional.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sección de Habitaciones del hotel -->
+    <section id="habitaciones" aria-labelledby="titulo-habitaciones">
+		<!-- Este es el contenedor principal de las habitaciones -->
+		<h2 id="titulo-habitaciones">Nuestras Habitaciones</h2>
+		<div class="habitaciones">
+			<!-- Tarjeta de la habitación estándar -->
+			<article class="habitacion">
+			  <img src="habitacionEstandar.jpg" alt="Habitación Estándar">
+			  <!-- Contenedor de información de la habitación -->
+			  <div class="habitacion-info">
+				<h3>Habitación Estándar</h3>
+				<p>Confortable habitación con cama de dos metros y baño privado.</p>
+				<p class="precio">$70 USD / noche</p>
+			  </div>
+			</article>
+
+			<!-- Tarjeta de la habitación doble -->
+			<article class="habitacion">
+			  <img src="habitacionDoble.jpg" alt="Habitación Doble">
+			  <div class="habitacion-info">
+				<h3>Habitación Doble</h3>
+				<p>Ideal para amigues o familia, equipada con dos camas individuales.</p>
+				<p class="precio">$90 USD / noche</p>
+			  </div>
+			</article>
+
+			<!-- Tarjeta de la suite junior -->
+			<article class="habitacion">
+			  <img src="suiteJunior.jpg" alt="Suite Junior">
+			  <div class="habitacion-info">
+				<h3>Suite Junior</h3>
+				<p>Amplia suite con balcón privado y vista al mar.</p>
+				<p class="precio">$120 USD / noche</p>
+			  </div>
+			</article>
+
+			<!-- Tarjeta de la suite familiar -->
+			<article class="habitacion">
+			  <img src="suiteFamiliar.jpg" alt="Suite Familiar">
+			  <div class="habitacion-info">
+				<h3>Suite Familiar</h3>
+				<p>Perfecta para disfrutar con tus personas favoritas, cuenta con dos habitaciones y sala de estar.</p>
+				<p class="precio">$150 USD / noche</p>
+			  </div>
+			</article>
+
+			<!-- Tarjeta de la suite presidencial -->
+			<article class="habitacion">
+			  <img src="suitePresidencial.jpg" alt="Suite Presidencial">
+			  <div class="habitacion-info">
+				<h3>Suite Presidencial</h3>
+				<p>Lujo y exclusividad, jacuzzi privado y servicio VIP.</p>
+				<p class="precio">$250 USD / noche</p>
+			  </div>
+			</article>
+		</div>
+	</section>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer id="contacto" aria-labelledby="titulo-contacto">
+    <h2 id="titulo-contacto">Contacto</h2>
+    <p>📍 Dirección: Calle 31 #12-21, Ciudad Villavicencio</p>
+    <p>📞 Tel: +123 456 789 | ✉ contacto@Diverqueer.SAS</p>
+    <p>&copy; 2025 Hotel Las Disidencias - Todos los derechos reservados</p>
+  </footer>
+</body>
+
+</html>
